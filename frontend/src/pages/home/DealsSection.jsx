@@ -1,6 +1,5 @@
 import React from 'react'
 import dealsImg from "../../assets/deals.png" 
-import './FAQ.css';  // Relative path to the CSS file
 
 
 const DealsSection = () => {
