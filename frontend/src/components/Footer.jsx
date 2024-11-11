@@ -37,6 +37,7 @@ const Footer = () => {
               <i className="fab fa-cc-discover text-3xl text-orange-500 hover:text-orange-600"></i>
               <i className="fab fa-cc-amex text-3xl text-blue-600 hover:text-blue-700"></i>
               <i className="fab fa-cc-mastercard text-3xl text-green-500 hover:text-green-600"></i>  {/* Placeholder for Cash App */}
+
               <i className="fab fa-cc-diners-club text-3xl text-blue-600 hover:text-blue-700"></i>  {/* Diners Club */}
             </div>
           </div>
