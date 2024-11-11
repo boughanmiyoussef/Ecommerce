@@ -1,108 +1,108 @@
 [
-    {
-      "id": 1,
-      "name": "Leather Handbag",
-      "category": "accessories",
-      "description": "Stylish leather handbag with ample storage space.",
-      "price": 79.99,
-      "oldPrice": 99.99,
-      "image": "https://images.unsplash.com/photo-1512201078372-9c6b2a0d528a?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "black",
-      "rating": 4.5,
-      "author":"admin"
-    },
-    {
-      "id": 2,
-      "name": "Evening Gown",
-      "category": "dress",
-      "description": "Elegant evening gown for special occasions.",
-      "price": 149.99,
-      "oldPrice": 199.99,
-      "image": "https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "red",
-      "rating": 4.0
-    },
-    {
-      "id": 3,
-      "name": "Gold Necklace",
-      "category": "jewellery",
-      "description": "Exquisite gold necklace with intricate design.",
-      "price": 199.99,
-      "image": "https://images.unsplash.com/photo-1631097969294-c38afba59496?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "gold",
-      "rating": 4.7
-    },
-    {
-      "id": 4,
-      "name": "Matte Lipstick",
-      "category": "cosmetics",
-      "description": "Long-lasting matte lipstick in various shades.",
-      "price": 19.99,
-      "image": "https://images.unsplash.com/photo-1631214500115-598fc2cb8d2d?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "red",
-      "rating": 4.2
-    },
-    {
-      "id": 5,
-      "name": "Silk Scarf",
-      "category": "accessories",
-      "description": "Luxurious silk scarf with vibrant colors.",
-      "price": 29.99,
-      "oldPrice": 39.99,
-      "image": "https://images.unsplash.com/photo-1485527691629-8e370684924c?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "blue",
-      "rating": 4.3
-    },
-    {
-      "id": 6,
-      "name": "Cocktail Dress",
-      "category": "dress",
-      "description": "Chic cocktail dress for parties and events.",
-      "price": 89.99,
-      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "black",
-      "rating": 4.4
-    },
-    {
-      "id": 7,
-      "name": "Diamond Earrings",
-      "category": "jewellery",
-      "description": "Sparkling diamond earrings that add elegance to any outfit.",
-      "price": 299.99,
-      "oldPrice": 349.99,
-      "image": "https://images.unsplash.com/photo-1587467442586-7bcc51828a10?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "silver",
-      "rating": 4.8
-    },
-    {
-      "id": 8,
-      "name": "Foundation",
-      "category": "cosmetics",
-      "description": "High-coverage foundation for a flawless finish.",
-      "price": 39.99,
-      "image": "https://images.unsplash.com/photo-1599733589046-10c005739ef9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "beige",
-      "rating": 4.1
-    },
-    {
-      "id": 9,
-      "name": "Sunglasses",
-      "category": "accessories",
-      "description": "Trendy sunglasses with UV protection.",
-      "price": 49.99,
-      "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "black",
-      "rating": 4.6
-    },
-    {
-      "id": 10,
-      "name": "Casual Pants",
-      "category": "dress",
-      "description": "Comfortable maxi dress for casual outings.",
-      "price": 59.99,
-      "oldPrice": 79.99,
-      "image": "https://plus.unsplash.com/premium_photo-1664298355914-bc65d2c9af64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "color": "green",
-      "rating": 4.2
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Youssef Youssef",
+    "category": "accessories",
+    "description": "Youssef Youssef Youssef Youssef Youssef Youssef Youssef Youssef",
+    "price": 79.99,
+    "oldPrice": 99.99,
+    "image": "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f",
+    "color": "black",
+    "rating": 4.5,
+    "author": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Royal Evening Dress",
+    "category": "dress",
+    "description": "Luxurious gown designed for exclusive events and galas.",
+    "price": 149.99,
+    "oldPrice": 199.99,
+    "image": "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
+    "color": "red",
+    "rating": 4.0
+  },
+  {
+    "id": 3,
+    "name": "Golden Elegance Necklace",
+    "category": "jewellery",
+    "description": "A statement gold necklace with a timeless, intricate design.",
+    "price": 199.99,
+    "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108",
+    "color": "gold",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Velvet Matte Lipstick",
+    "category": "cosmetics",
+    "description": "Matte finish lipstick offering intense color and long wear.",
+    "price": 19.99,
+    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b",
+    "color": "red",
+    "rating": 4.2
+  },
+  {
+    "id": 5,
+    "name": "Vibrant Silk Scarf",
+    "category": "accessories",
+    "description": "A luxurious silk scarf in a variety of vibrant patterns.",
+    "price": 29.99,
+    "oldPrice": 39.99,
+    "image": "https://images.unsplash.com/photo-1572099436179-b3b41e9ff8d9?q=80&w=2074&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "blue",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Midnight Cocktail Dress",
+    "category": "dress",
+    "description": "Chic and elegant cocktail dress perfect for night events.",
+    "price": 89.99,
+    "image": "https://images.unsplash.com/photo-1640890959827-6307611b34a1",
+    "color": "black",
+    "rating": 4.4
+  },
+  {
+    "id": 7,
+    "name": "Sparkling Diamond Studs",
+    "category": "jewellery",
+    "description": "Exquisite diamond studs, the perfect touch for any special occasion.",
+    "price": 299.99,
+    "oldPrice": 349.99,
+    "image": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
+    "color": "silver",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Perfect Coverage Foundation",
+    "category": "cosmetics",
+    "description": "A high-coverage foundation that gives you a flawless complexion.",
+    "price": 39.99,
+    "image": "https://images.unsplash.com/photo-1599296571529-b7d62e2a75c9?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "beige",
+    "rating": 4.1
+  },
+  {
+    "id": 9,
+    "name": "Classic Sunglasses",
+    "category": "accessories",
+    "description": "Stylish sunglasses with premium UV protection, perfect for sunny days.",
+    "price": 49.99,
+    "image": "https://images.unsplash.com/photo-1556742031-df7a9572c6b0?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "black",
+    "rating": 4.6
+  },
+  {
+    "id": 10,
+    "name": "Elegant Casual Pants",
+    "category": "dress",
+    "description": "Comfortable, stylish maxi pants for both casual and semi-formal occasions.",
+    "price": 59.99,
+    "oldPrice": 79.99,
+    "image": "https://images.unsplash.com/photo-1573574903980-484ef58c77c9?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "green",
+    "rating": 4.2
+  }
+]

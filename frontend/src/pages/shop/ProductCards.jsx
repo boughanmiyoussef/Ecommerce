@@ -1,15 +1,16 @@
+// ProductCards.jsx
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import RatingStars from "../../components/RatingStars";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const ProductCards = ({ products }) => {
+  const dispatch = useDispatch();
 
-      const dispatch = useDispatch();
-      const handleAddToCart = (product) =>{
-        dispatch(addToCart(product)) 
-      }
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product)); // Dispatching addToCart action
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -17,20 +18,21 @@ const ProductCards = ({ products }) => {
         <div key={index} className="product__card">
           <div className="relative">
             <Link to={`/shop/${product._id}`}>
-              {/* Corrected the image src */}
               <img
-                className="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300 "
+                className="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
                 src={product.image}
                 alt={product.title}
               />
             </Link>
 
-            <div className="hover:block absolute top-3 right-3 ">
-              <button onClick={(e => {
-                e.stopPropagation
-                handleAddToCart(product)
-              })}>
-                <i className="ri-shopping-bag-4-line bg-primary p-1.5 text-white hover:bg-primary-dark"></i>{" "}
+            <div className="hover:block absolute top-3 right-3">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent triggering parent link
+                  handleAddToCart(product); // Add product to the cart
+                }}
+              >
+                <i className="ri-shopping-bag-4-line bg-primary p-1.5 text-white hover:bg-primary-dark"></i>
               </button>
             </div>
           </div>
@@ -42,11 +44,7 @@ const ProductCards = ({ products }) => {
               ${product.price}
               {product.oldPrice && <s> ${product.oldPrice}</s>}
             </p>
-
-
-            <RatingStars rating={product.rating}/>
-
-
+            <RatingStars rating={product.rating} />
           </div>
         </div>
       ))}
