@@ -1,12 +1,15 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/Navbar'
+import Home from './pages/home/Home'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-5xl  text-red-600 '>Hello Developer </h1> 
+    <Navbar/>
+    <Home/>
       <Outlet/>
     </>
   )
