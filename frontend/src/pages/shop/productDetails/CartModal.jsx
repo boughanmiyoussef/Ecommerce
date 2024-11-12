@@ -1,16 +1,21 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart} from "../../../redux/features/cart/cartSlice";
+import { addToCart, removeFromCart, updateQuantity} from "../../../redux/features/cart/cartSlice";
+import OrderSummary from '../OrderSummary';
 
 const CartModal = ({ products, isOpen, onClose }) => {
   const dispatch = useDispatch();
 
-  // Handle increasing quantity
-  const handleIncreaseQuantity = (productId) => {
-    const product = products.find(product => product._id === productId);
-    // Increase the quantity of the selected product by 1
-    dispatch(addToCart({ ...product, quantity: product.quantity + 1 }));
-  };
+
+  const handleQuantity = ((type, id) => {
+      const payload = {type, id}
+      dispatch(updateQuantity(payload))
+  })
+
+  const handleRemove = (e, id) => {
+    e.preventDefault();
+    dispatch(removeFromCart({id}))
+  }
 
 
   return (
@@ -66,14 +71,14 @@ const CartModal = ({ products, isOpen, onClose }) => {
                     {/* Quantity Controls */}
                     <div className="flex items-center space-x-2">
                       <button
-                        onClick={() => handleDecreaseQuantity(item._id)}
+                        onClick={() => handleQuantity('decrement', item.id)}
                         className="px-2 py-1 bg-gray-200 rounded-full text-gray-700 hover:bg-primary hover:text-white"
                       >
                         -
                       </button>
                       <span className="text-center">{item.quantity}</span>
                       <button
-                        onClick={() => handleIncreaseQuantity(item._id)}
+                        onClick={() => handleQuantity('increment' , item.id)}
                         className="px-2 py-1 bg-gray-200 rounded-full text-gray-700 hover:bg-primary hover:text-white"
                       >
                         +
@@ -82,7 +87,7 @@ const CartModal = ({ products, isOpen, onClose }) => {
 
                     {/* Remove Button */}
                     <button
-                      onClick={() => handleRemoveProduct(item._id)}
+                      onClick={(e) => handleRemove(e, item.id)}
                       className="text-red-500 hover:text-red-800"
                     >
                       Remove
@@ -92,6 +97,13 @@ const CartModal = ({ products, isOpen, onClose }) => {
               ))
             )}
           </div>
+
+          {/* Calcaulation */}
+          {
+      products.length > 0 && <OrderSummary />
+           }
+
+
         </div>
       </div>
     </div>

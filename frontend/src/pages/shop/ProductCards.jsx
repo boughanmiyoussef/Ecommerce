@@ -4,12 +4,19 @@ import RatingStars from "../../components/RatingStars";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
-const ProductCards = ({ products }) => {
+const CartModal = ({ products, isOpen, onClose }) => {
   const dispatch = useDispatch();
+
+const handleRemove = (e, id) => {
+  e.preventDefault();
+  dispatch(removeFromCart({id}))
+}
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product)); // Dispatching addToCart action
   };
+
+
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -31,7 +38,8 @@ const ProductCards = ({ products }) => {
                   handleAddToCart(product); // Add product to the cart
                 }}
               >
-                <i className="ri-shopping-bag-4-line bg-primary p-1.5 text-white hover:bg-primary-dark"></i>
+                <i onClick={(e) => handleRemove(e, item.id)}
+ className="ri-shopping-bag-4-line bg-primary p-1.5 text-white hover:bg-primary-dark"></i>
               </button>
             </div>
           </div>
@@ -51,4 +59,4 @@ const ProductCards = ({ products }) => {
   );
 };
 
-export default ProductCards;
+export default CartModal;

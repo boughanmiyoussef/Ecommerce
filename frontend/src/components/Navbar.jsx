@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import CartModal from '../pages/shop/productDetails/CartModal';
+import CartModal from '../pages/shop/productDetails/CartModal';
 
 const Navbar = () => {
   
   const products = useSelector((state) => state.cart.products);
   console.log(products)
+
+  const [isCartOpen , setisCartOpen] = useState(false);
+  const handleCartToggle = () =>{
+        setisCartOpen(!isCartOpen)   
+  }
+
 
 
   return (
@@ -41,10 +47,10 @@ const Navbar = () => {
           </span>
 
           <span>
-            <button  className="hover:text-primary">
+            <button onClick={handleCartToggle}  className="hover:text-primary">
               <i className="ri-shopping-cart-2-line"></i>
               <sup className="text-sm inline-block px-1.5 text-white rounded-full bg-red-500 text-center">
-                {products.length} Display the number of items in the cart
+                {products.length} 
               </sup>
             </button>
           </span>
@@ -58,13 +64,13 @@ const Navbar = () => {
       </nav>
 
       {/* Cart Modal */}
-      {/* {isCartOpen && (
+      {isCartOpen && (
         <CartModal
           products={products}  // Pass the cart products to the modal
           isOpen={isCartOpen}
           onClose={handleCartToggle}  // Pass the close function
         />
-      )} */}
+      )}
     </header>
   );
 };
