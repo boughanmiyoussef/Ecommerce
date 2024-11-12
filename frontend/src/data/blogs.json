@@ -1,31 +1,30 @@
 [
-    {
-      "id": 1,
-      "title": "Mastering the Art of Capsule Wardrobes",
-      "subtitle": "Timeless Elegance",
-      "date": "12th August 2022",
-      "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": 2,
-      "title": "Unveiling the Hottest Beachwear Trends",
-      "subtitle": "Summer Breeze",
-      "date": "18th January 2023",
-      "imageUrl": "https://images.unsplash.com/photo-1700159017572-de76bb0c5719?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": 3,
-      "title": "Navigating the World of Women's Tailoring",
-      "subtitle": "Power Dressing",
-      "date": "5th January 2025",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1682142715511-27bfbfdc044f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "id": 4,
-        "title": "The World's Best Fashion Fair 2025",
-        "subtitle": "New York Times",
-        "date": "25th May 2025",
-        "imageUrl": "https://plus.unsplash.com/premium_photo-1713720663924-4e3fe8f20f79?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-  ]
-  
+  {
+    "imageUrl": "https://images.unsplash.com/photo-1507652955-f3dcef5a3be5",
+    "title": "The Ultimate Summer Wardrobe Essentials",
+    "subtitle": "Fashion Tips",
+    "date": "August 22, 2024",
+    "description": "As the summer heat rolls in, it's time to update your wardrobe with the latest trends. Here are the must-have items for your summer fashion lineup."
+  },
+  {
+    "imageUrl": "https://images.unsplash.com/photo-1426604966848-d7adac402bff",
+    "title": "5 Simple Ways to Stay Healthy During the Holidays",
+    "subtitle": "Health & Wellness",
+    "date": "December 15, 2024",
+    "description": "The holiday season is full of delicious treats and tempting indulgences. Here are five simple ways to stay on track with your health goals while still enjoying the festivities."
+  },
+  {
+    "imageUrl": "https://images.unsplash.com/photo-1527576539890-dfa815648363",
+    "title": "How to Create a Cozy and Stylish Living Room",
+    "subtitle": "Home Decor",
+    "date": "October 10, 2024",
+    "description": "Transform your living room into a cozy yet stylish retreat with these design tips and tricks. Learn how to balance comfort and style for the perfect living space."
+  },
+  {
+    "imageUrl": "https://images.unsplash.com/photo-1464820453369-31d2c0b651af",
+    "title": "The Best Skincare Routine for Glowing Skin",
+    "subtitle": "Beauty",
+    "date": "September 5, 2024",
+    "description": "Achieving glowing skin requires more than just good genetics—it's all about following the right skincare routine. Find out the best steps to take for radiant, healthy skin."
+  }
+]
