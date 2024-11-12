@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import CartModal from '../pages/shop/productDetails/CartModal';
+// import CartModal from '../pages/shop/productDetails/CartModal';
 
 const Navbar = () => {
-  // Access the cart products and selectedItems from the Redux store
-  const products = useSelector((state) => state.cart.products);  // Get the products from the cart
-  const selectedItems = useSelector((state) => state.cart.selectedItems);
+  
+  const products = useSelector((state) => state.cart.products);
+  console.log(products)
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const handleCartToggle = () => {
-    setIsCartOpen(!isCartOpen);
-  };
 
   return (
     <header className="fixed-nav-bar w-nav">
@@ -33,7 +29,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="nav__logo">
-          <Link to="/">GreenMart <span>✅</span></Link>
+          <Link to="/">GreenMart <span>.</span></Link>
         </div>
 
         {/* nav Icons */}
@@ -45,10 +41,10 @@ const Navbar = () => {
           </span>
 
           <span>
-            <button onClick={handleCartToggle} className="hover:text-primary">
+            <button  className="hover:text-primary">
               <i className="ri-shopping-cart-2-line"></i>
               <sup className="text-sm inline-block px-1.5 text-white rounded-full bg-red-500 text-center">
-                {selectedItems} {/* Display the number of items in the cart */}
+                {products.length} Display the number of items in the cart
               </sup>
             </button>
           </span>
@@ -62,13 +58,13 @@ const Navbar = () => {
       </nav>
 
       {/* Cart Modal */}
-      {isCartOpen && (
+      {/* {isCartOpen && (
         <CartModal
           products={products}  // Pass the cart products to the modal
           isOpen={isCartOpen}
           onClose={handleCartToggle}  // Pass the close function
         />
-      )}
+      )} */}
     </header>
   );
 };

@@ -1,32 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from "../../../redux/features/cart/cartSlice";
+import { addToCart} from "../../../redux/features/cart/cartSlice";
 
 const CartModal = ({ products, isOpen, onClose }) => {
   const dispatch = useDispatch();
 
   // Handle increasing quantity
   const handleIncreaseQuantity = (productId) => {
-    const product = products.find(item => item._id === productId);
+    const product = products.find(product => product._id === productId);
     // Increase the quantity of the selected product by 1
     dispatch(addToCart({ ...product, quantity: product.quantity + 1 }));
   };
 
-  // Handle decreasing quantity
-  const handleDecreaseQuantity = (productId) => {
-    const product = products.find(item => item._id === productId);
-    if (product.quantity > 1) {
-      // Decrease the quantity of the selected product by 1 (only if > 1)
-      dispatch(addToCart({ ...product, quantity: product.quantity - 1 }));
-    }
-  };
-
-  // Handle removing product
-  const handleRemoveProduct = (productId) => {
-    const product = products.find(item => item._id === productId);
-    // Remove product from the cart
-    dispatch(removeFromCart(product));
-  };
 
   return (
     <div

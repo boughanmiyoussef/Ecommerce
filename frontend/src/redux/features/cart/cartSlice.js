@@ -1,12 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
+// Initial state for the cart
 const initialState = {
   products: [],
-  selectedItems: 0,  // This will hold the total count of items in the cart
+  selectedItems: 0,
   totalPrice: 0,
   tax: 0,
   taxRate: 0.05,
-  grandTotal: 0,
+  grandTotal: 0, 
 };
 
 const cartSlice = createSlice({
@@ -14,47 +15,36 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const product = action.payload;
-      // Check if the product already exists in the cart
-      const existingProduct = state.products.find((item) => item._id === product._id);
-      
-      if (existingProduct) {
-        // If product exists, increase its quantity
-        existingProduct.quantity += 1;
+      // Find the existing product in the cart by matching its `id`
+      const isExist = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+
+      if (isExist) {
+        // If the product exists, increase its quantity
+        console.log("Item Already Exist");
       } else {
-        // If product doesn't exist, add it to the cart with quantity 1
-        state.products.push({ ...product, quantity: 1 });
+        // Otherwise, add the product with quantity 1
+        state.products.push({ ...action.payload, quantity: 1 });
       }
 
-      // Recalculate cart values
-      state.selectedItems = setSelectedItems(state);
-      state.totalPrice = setTotalPrice(state);
-      state.tax = setTax(state);
-      state.grandTotal = setGrandTotal(state);
-    },
-    // Optionally, create a remove item action if needed
-    removeFromCart: (state, action) => {
-      state.products = state.products.filter(item => item._id !== action.payload._id);
-      state.selectedItems = setSelectedItems(state);
-      state.totalPrice = setTotalPrice(state);
-      state.tax = setTax(state);
-      state.grandTotal = setGrandTotal(state);
+      // Update the selectedItems count (total quantity of products in the cart)
+      state.selectedItems = state.products.reduce(
+        (total, product) => total + product.quantity,
+        0
+      );
+
+      // Update total price, tax, and grandTotal
+      state.totalPrice = state.products.reduce(
+        (total, product) => total + product.quantity * product.price,
+        0
+      );
+      state.tax = state.totalPrice * state.taxRate;
+      state.grandTotal = state.totalPrice + state.tax;
     },
   },
 });
 
-// Utility functions to calculate total items, price, etc.
-export const setSelectedItems = (state) => 
-  state.products.reduce((total, product) => total + product.quantity, 0);
-
-export const setTotalPrice = (state) => 
-  state.products.reduce((total, product) => total + product.quantity * product.price, 0);
-
-export const setTax = (state) => setTotalPrice(state) * state.taxRate;
-
-export const setGrandTotal = (state) => 
-  setTotalPrice(state) + setTax(state);
-
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
