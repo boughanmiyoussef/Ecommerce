@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import productsData from "../../data/products.json";  // Assuming you have a product JSON file
 import ProductCards from '../shop/ProductCards'; // Assuming you have a ProductCards component for displaying products
+import { useFetchAllProductsQuery } from '../../redux/features/products/productsApi';
 
 const ShopPage = () => {
   // Define the filters
@@ -49,32 +50,32 @@ const ShopPage = () => {
   const handleSearch = () => {
     const query = searchQuery.toLowerCase();
 
-    // Filter products based on the search query and selected filters
-    const filtered = productsData.filter((product) => {
-      const matchesSearch =
-        product.name.toLowerCase().includes(query) ||
-        product.description.toLowerCase().includes(query);
+    // // Filter products based on the search query and selected filters
+    // const filtered = productsData.filter((product) => {
+    //   const matchesSearch =
+    //     product.name.toLowerCase().includes(query) ||
+    //     product.description.toLowerCase().includes(query);
 
-      // Apply the category, color, and price filters
-      const matchesCategory =
-        selectedCategories.length === 0 || selectedCategories.includes(product.category.toLowerCase()) || selectedCategories.includes('all');
-      const matchesColor =
-        selectedColors.length === 0 || selectedColors.includes(product.color.toLowerCase()) || selectedColors.includes('all');
-      const priceRange = filters.priceRanges.find((range) => range.label === selectedPriceRange);
-      const matchesPrice =
-        selectedPriceRange === 'all' ||
-        (product.price >= priceRange.min && product.price <= priceRange.max);
+    //   // Apply the category, color, and price filters
+    //   const matchesCategory =
+    //     selectedCategories.length === 0 || selectedCategories.includes(product.category.toLowerCase()) || selectedCategories.includes('all');
+    //   const matchesColor =
+    //     selectedColors.length === 0 || selectedColors.includes(product.color.toLowerCase()) || selectedColors.includes('all');
+    //   const priceRange = filters.priceRanges.find((range) => range.label === selectedPriceRange);
+    //   const matchesPrice =
+    //     selectedPriceRange === 'all' ||
+    //     (product.price >= priceRange.min && product.price <= priceRange.max);
 
-      return matchesSearch && matchesCategory && matchesColor && matchesPrice;
-    });
+    //   return matchesSearch && matchesCategory && matchesColor && matchesPrice;
+    // });
 
     setFilteredProducts(filtered);
   };
 
-  // Filter products whenever the filters or search query change
-  useEffect(() => {
-    handleSearch(); // Trigger the search whenever any filter or search query changes
-  }, [selectedCategories, selectedColors, selectedPriceRange, searchQuery]);
+  // // Filter products whenever the filters or search query change
+  // useEffect(() => {
+  //   handleSearch(); // Trigger the search whenever any filter or search query changes
+  // }, [selectedCategories, selectedColors, selectedPriceRange, searchQuery]);
 
   // Clear all filters
   const clearFilters = () => {
@@ -83,6 +84,30 @@ const ShopPage = () => {
     setSelectedPriceRange('all');
     setSearchQuery('');
   };
+
+
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [ProductsPerPage] = useState(8);
+  const { category, color, priceRange } = filteredProducts;
+  const [minPrice, maxPrice] = priceRange.split('-').map(Number); // Assuming priceRange is in "minPrice-maxPrice" format
+  
+  const { data: {products = [], totalPage, totalProducts } ={}, error, isLoading } = useFetchAllProductsQuery({
+    category: category !== "all" ? category : ' ',
+    color: color !== "color" ? color : ' ', // Corrected the typo from `ccolor` to `color`
+    minPrice: isNaN(minPrice) ? '' : minPrice, // Corrected `isNan` to `isNaN`
+    maxPrice: isNaN(maxPrice) ? '' : maxPrice, // Used `maxPrice` instead of `minPrice`
+    page: currentPage, // Corrected the `Page` to `page` and set it to `currentPage`
+    limit: ProductsPerPage // Used `productsPerPage` instead of a hardcoded value
+  });  
+
+  if (isLoading) return <div>Loading</div>
+  if (error) return <div>Error</div>
+
+
+  const startProduct = (currentPage - 1) * ProductsPerPage + 1;
+  const endProduct = startProduct + products.length - 1;
+
 
   return (
     <>
@@ -201,6 +226,8 @@ const ShopPage = () => {
             </h3>
             {filteredProducts.length > 0 ? (
               <ProductCards products={filteredProducts} />
+
+
             ) : (
               <p>No products found based on the selected filters.</p>
             )}
